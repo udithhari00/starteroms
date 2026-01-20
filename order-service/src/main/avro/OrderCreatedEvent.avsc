@@ -1,0 +1,58 @@
+{
+  "type": "record",
+  "name": "OrderCreatedEvent",
+  "namespace": "com.example.orderservice.avro",
+  "doc": "Event published when new order is created",
+  "fields": [
+    {
+    "name": "eventId",
+    "type": "string",
+    "doc": "Unique id for the event"
+    },
+    {
+      "name": "orderId",
+      "type": "string",
+      "doc": "Unique id for the order"
+    },{
+      "name": "customerId",
+      "type": "string",
+      "doc": "Customer who placed the order"
+    },
+    {
+      "name": "totalAmount",
+      "type": "double",
+      "doc": "Total order amount"
+    },
+    {
+      "name": "items",
+      "type": {
+        "type": "array",
+        "items": {
+          "type": "record",
+          "name": "OrderItem",
+          "fields": [
+            {"name": "productId","type":"string"},
+            {"name": "productName","type":"string"},
+            {"name": "quantity","type":"int"},
+            {"name": "unitPrice","type":"double"}
+          ]
+        }
+      },
+      "doc": "List of items in the order"
+    },
+    {
+      "name": "timestamp",
+      "type" : {
+        "type": "long",
+        "logicalType": "timestamp-millis"
+      },
+      "doc": "Event timestamp in ms"
+    },
+    {
+      "name": "correlationId",
+      "type": ["null","string"],
+      "default": null,
+      "doc": "Correlation ID for tracking"
+    }
+  ]
+}

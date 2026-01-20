@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(docker compose:*)",
+      "Bash(docker volume rm:*)",
+      "Bash(./mvnw spring-boot:run:*)",
+      "Bash(docker exec:*)",
+      "Bash(timeout 60 ./mvnw spring-boot:run:*)"
+    ]
+  }
+}
