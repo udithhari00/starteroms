@@ -14,6 +14,7 @@ target/
 .sts4-cache
 
 ### IntelliJ IDEA ###
+.claude
 .idea
 *.iws
 *.iml
@@ -31,3 +32,8 @@ build/
 
 ### VS Code ###
 .vscode/
+
+nul
+NUL
+**/nul
+**/NUL
