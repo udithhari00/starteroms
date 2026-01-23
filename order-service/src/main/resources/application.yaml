@@ -33,4 +33,4 @@ app:
     topic:
       order-created: order.created
 server:
-  port: 8083
+  port: 7070
